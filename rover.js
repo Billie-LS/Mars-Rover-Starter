@@ -3,5 +3,3 @@ class Rover {
 }
 
 module.exports = Rover;
-
-// test init
