@@ -4,4 +4,3 @@ class Rover {
 
 module.exports = Rover;
 
-// testing
