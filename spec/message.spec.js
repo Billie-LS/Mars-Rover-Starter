@@ -18,4 +18,17 @@ describe("Message class", function () {
     const message = new Message("Test message with two commands");
     expect(message.name).toEqual("Test message with two commands");
   });
+
+  // Test 6
+  // TODO: description here
+  it("contains a commands array passed into the constructor as the 2nd argument", function () {
+    // const message = new Message("Test message with two commands", 7);
+
+    const commands = [
+      new Command("MODE_CHANGE", "LOW_POWER"),
+      new Command("STATUS_CHECK"),
+    ];
+    const message = new Message("Test message with two commands", commands);
+    expect(message.name).toEqual("Test message with two commands", commands);
+  });
 });
