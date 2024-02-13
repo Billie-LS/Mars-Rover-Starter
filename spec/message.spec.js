@@ -12,4 +12,10 @@ describe("Message class", function () {
       new Message();
     }).toThrow(new Error("Message name required."));
   });
+  // Test 5
+  // TODO: description here
+  it("constructor sets name", function () {
+    const message = new Message("Test message with two commands");
+    expect(message.name).toEqual("Test message with two commands");
+  });
 });
