@@ -9,12 +9,20 @@ value is a value related to the type of command
 // class builds object with two properties: constructor(commandType, value)
 class Command {
   constructor(commandType, value) {
+    if (!commandType) throw Error("Command type required.");
     this.commandType = commandType;
-    if (!commandType) {
-      throw Error("Command type required.");
-    }
     this.value = value;
   }
 }
+
+// class Command {
+//   constructor(commandType, value) {
+//     this.commandType = commandType;
+//     if (!commandType) {
+//       throw Error("Command type required.");
+//     }
+//     this.value = value;
+//   }
+// }
 
 module.exports = Command;
