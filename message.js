@@ -6,14 +6,21 @@ class builds object with two properties: constructor(name, commands)
 */
 class Message {
   constructor(name, commands) {
+    if (!name) throw Error("Message name required.");
     this.name = name;
-    if (!name) {
-      throw Error("Message name required.");
-    }
     this.commands = commands;
   }
-  // Write code here!
 }
+
+// class Message {
+//   constructor(name, commands) {
+//     this.name = name;
+//     if (!name) {
+//       throw Error("Message name required.");
+//     }
+//     this.commands = commands;
+//   }
+// }
 
 module.exports = Message;
 
