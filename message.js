@@ -11,7 +11,8 @@ class Message {
   // constructor with two properties, name and commands, commands default to empty array
   constructor(name, commands = []) {
     // logic check for name is input or throw an error
-    if (!name) throw Error("Message name required.");
+    // if (!name) throw Error("Message name required.");
+    if (!name) throw Error("name required for Message object.");
 
     // constructor set name property to name argument provided
     this.name = name;
