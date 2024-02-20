@@ -9,13 +9,13 @@ value is a value related to the type of command.
 class Command {
   // constructor with two properties, commandType and value
   constructor(commandType, value) {
-    // logic check for commandType is input or throw an error
+    // logic check for commandType input or throw an error
     if (!commandType) throw Error("Command type required.");
 
     // constructor set commandType property to commandType argument provided
     this.commandType = commandType;
 
-    // constructor set value property to value argument provided
+    // constructor set value property to value argument
     this.value = value;
   }
 }
