@@ -33,7 +33,7 @@ describe("Command class", function () {
     let testValue = 12000;
     // generate Command object with test commandType and test value
     let command = new Command(testType, testValue);
-    // confirm value property set correctly
+    // confirm Command object's value property set correctly
     expect(command.value).toEqual(testValue);
   });
 });
