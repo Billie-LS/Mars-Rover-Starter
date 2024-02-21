@@ -22,3 +22,4 @@ class Command {
 
 // export Command class as Command module
 module.exports = Command;
+// test
