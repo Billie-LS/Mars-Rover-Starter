@@ -148,4 +148,27 @@ describe("Rover class", () => {
     // confirm rover's position updated to new position value
     expect(rover.position).toEqual(12345);
   });
+
+  // test 14
+  // Grading super test
+  it("Responds to TA message & commands", function () {
+    const rover = new Rover(100);
+    const commands = [
+      new Command("MOVE", 4321),
+      new Command("STATUS_CHECK"),
+      new Command("MODE_CHANGE", "LOW_POWER"),
+      new Command("MOVE", 3579),
+      new Command("STATUS_CHECK"),
+    ];
+    const message = new Message("JK power", commands);
+    const response = rover.receiveMessage(message);
+    expect(response.message).toEqual("JK power");
+    expect(response.results[0].completed).toBeTruthy();
+    expect(response.results[1].roverStatus.position).toEqual(4321);
+    expect(response.results[2].completed).toBeTruthy();
+    expect(response.results[3].completed).toBeFalsy();
+    expect(response.results[4].roverStatus.position).toEqual(4321);
+    expect(response.results[4].roverStatus.mode).toEqual("LOW_POWER");
+    expect(response.results[4].roverStatus.generatorWatts).toEqual(110);
+  });
 });
