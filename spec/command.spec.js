@@ -17,9 +17,9 @@ describe("Command class", function () {
   // confirm constructor sets commandType property correctly
   it("constructor sets command type", () => {
     // define a test commandType
-    let testType = "Move";
+    const testType = "Move";
     // generate Command object with test commandType
-    let command = new Command(testType);
+    const command = new Command(testType);
     // confirm commandType property set correctly
     expect(command.commandType).toBe(testType);
   });
@@ -28,11 +28,11 @@ describe("Command class", function () {
   // confirm constructor sets value passed in as the 2nd argument
   it("constructor sets a value passed in as the 2nd argument", () => {
     // define a test commandType
-    let testType = "Move";
+    const testType = "Move";
     // define a test value
-    let testValue = 12000;
+    const testValue = 12000;
     // generate Command object with test commandType and test value
-    let command = new Command(testType, testValue);
+    const command = new Command(testType, testValue);
     // confirm Command object's value property set correctly
     expect(command.value).toEqual(testValue);
   });
