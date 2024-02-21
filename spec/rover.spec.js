@@ -102,13 +102,13 @@ describe("Rover class", () => {
   // confirm rover responds false completed value when attempting to move in LOW_POWER mode
   it("responds with a false completed value when attempting to move in LOW_POWER mode", () => {
     // generate command with commandType 'MOVE' and value 'LOW_POWER'
-    let commands = [new Command("MOVE", "LOW_POWER")];
+    const commands = [new Command("MOVE", "LOW_POWER")];
 
     // generate Message object with specified name and move command
-    let message = new Message("Test message name", commands);
+    const message = new Message("Test message name", commands);
 
     // generate Rover object with specified position
-    let rover = new Rover(98382); // pass 98382 position parameter value
+    const rover = new Rover(98382); // pass 98382 position parameter value
 
     // change rover's mode to 'LOW_POWER'
     rover.receiveMessage(
@@ -118,7 +118,7 @@ describe("Rover class", () => {
     );
 
     // generate response calling receiveMessage method on Rover object with message
-    let response = rover.receiveMessage(message);
+    const response = rover.receiveMessage(message);
 
     // confirm move command NOT completed successfully
     expect(response.results[0].completed).toBe(false);
@@ -131,16 +131,16 @@ describe("Rover class", () => {
   // confirm rover responds with the position for move command
   it("responds with the position for the move command", () => {
     // generate command with commandType 'MOVE' and new position value 12345
-    let commands = [new Command("MOVE", 12345)];
+    const commands = [new Command("MOVE", 12345)];
 
     // generate Message object with specified name and move command
-    let message = new Message("Test move command", commands);
+    const message = new Message("Test move command", commands);
 
     // generate Rover object with specified position
-    let rover = new Rover(98382); // pass 98382 position parameter value
+    const rover = new Rover(98382); // pass 98382 position parameter value
 
     // generate response calling receiveMessage method on Rover object with message
-    let response = rover.receiveMessage(message);
+    const response = rover.receiveMessage(message);
 
     // confirm move command completed successfully
     expect(response.results[0].completed).toBe(true);
