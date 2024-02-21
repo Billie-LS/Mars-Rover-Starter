@@ -18,7 +18,6 @@ describe("Message class", () => {
   // test error thrown if name not passed in constructor as first parameter
   it("throws error if a name is NOT passed into the constructor as the first parameter", () => {
     // confirm constructing  Message object without name throws error
-    // expect(() => new Message()).toThrow(new Error("Message name required."));
     expect(() => new Message()).toThrow(
       new Error("name required for Message object.")
     );
