@@ -27,9 +27,9 @@ describe("Message class", () => {
   // confirm constructor sets name property correctly
   it("constructor sets name", () => {
     // define a test name
-    let testName = "Test message with two commands";
+    const testName = "Test message with two commands";
     // generate Message object with test name
-    let message = new Message(testName);
+    const message = new Message(testName);
     // confirm name property set correctly
     expect(message.name).toBe(testName);
   });
@@ -38,12 +38,12 @@ describe("Message class", () => {
   // confirm constructor sets commands array property correctly
   it("contains a commands array passed into the constructor as the 2nd argument", () => {
     // define array of commands
-    let commands = [
+    const commands = [
       new Command("MODE_CHANGE", "LOW_POWER"),
       new Command("STATUS_CHECK"),
     ];
     // generate Message object with test name and test commands
-    let message = new Message("Test message with two commands", commands);
+    const message = new Message("Test message with two commands", commands);
     // confirm commands array property set correctly
     expect(message.commands).toEqual(commands);
   });
